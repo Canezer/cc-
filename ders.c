@@ -6,12 +6,12 @@ int main()
 
         if (x % 3 == 0)
         {
-            printf("vahap");
+            printf("bati");
         }
 
         if (x % 5 == 0)
         {
-            printf("can");
+            printf("sunepe");
         }
         if (x % 3 != 0 && x % 5 != 0)
         {
