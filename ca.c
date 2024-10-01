@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
-#define MAXDENEME 6
+#define MAXDENEME 5
 
 void printt(char kelime[], bool bulunanlar[])
 {
@@ -11,7 +11,11 @@ void printt(char kelime[], bool bulunanlar[])
         {
             printf("%c", kelime[i]);
         }
-    }
+        else
+        {
+            printf("_");
+        }
+    } printf ("\n");
 }
 bool kontrol(bool bulunanlar[])
 {
@@ -22,44 +26,41 @@ bool kontrol(bool bulunanlar[])
         {
             return 0;
         }
-        else
-        {
-        }
+        
     }
     return 1;
 }
 int main()
 {
     char harf;
-    char kelime[] = "ahmet";
+    char kelime[] = "tahta";
     bool bulunanlar[5];
 
     for (int i = 0; i < strlen(kelime); i++)
-
     {
         bulunanlar[i] = 0;
     }
-    for (int deneme = 10; deneme > 0; deneme--)
+    for (int deneme = 0; deneme < MAXDENEME;)
     {
-
+        bool bulundumu = 0;
         printf("harfinizi giriniz: \n");
         scanf(" %c", &harf);
 
         for (int i = 0; i < strlen(kelime); i++)
         {
+
             char kopya = kelime[i];
             if (harf == kopya)
             {
                 bulunanlar[i] = 1;
-                printt(kelime, bulunanlar);
-            }
-            if (harf != kopya)
-            {
-
-                printf("_ ");
+                bulundumu = 1;
             }
         }
-
+        printt(kelime, bulunanlar);
+        if (bulundumu == 0)
+        {
+            deneme++;
+        }
         if (kontrol(bulunanlar))
         {
             printf("tebrikler ");
