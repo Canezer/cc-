@@ -2,7 +2,57 @@
 #include <string.h>
 #include <stdbool.h>
 #define MAXDENEME 5
+char *oo(int randomLine)
 
+{
+
+    int akildakiLine2;
+    int akildakiLine;
+    char degisken[30];
+    int currentLine = 0;
+    for (i = 0; i < strlen(isimler); i++)
+    {
+        if (isimler[i] == '/n')
+        {
+
+            currentLine++;
+        }
+        if (currentLine == randomLine)
+        {
+            akildakiLine = i;
+        }
+        if (currentLine - 1 == randomLine)
+        {
+            akildakiLine2 = i;
+        }
+        if (currentLine > randomLine)
+        {
+            break;
+        }
+    }
+    strncpy(degisken, a)
+}
+int rastsayi(int n)
+{
+
+    int sayi = rand() % n;
+    return sayi;
+}
+char *randomisim() 
+{
+    FILE *fptr;
+    fptr = fopen("isim.cc.txt", "r");
+    char isimler[50000];
+    fgets(isimler, 50000, fptr);
+    for (int i = 0; i < strlen(isimler); i++)
+    {
+        if (isimler[i] == '/n')
+        {
+            n++;
+        }
+    }
+    int rastsayikelime = rastsayi(n);
+}
 void printt(char kelime[], bool bulunanlar[])
 {
     for (int i = 0; i < strlen(kelime); i++)
@@ -15,7 +65,8 @@ void printt(char kelime[], bool bulunanlar[])
         {
             printf("_");
         }
-    } printf ("\n");
+    }
+    printf("\n");
 }
 bool kontrol(bool bulunanlar[])
 {
@@ -26,7 +77,6 @@ bool kontrol(bool bulunanlar[])
         {
             return 0;
         }
-        
     }
     return 1;
 }
